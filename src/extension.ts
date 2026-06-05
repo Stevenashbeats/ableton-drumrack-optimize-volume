@@ -64,13 +64,13 @@ async function optimize(ctx: Ctx, handle: Handle): Promise<Report> {
 function resultHtml(r: Report): string {
   const ok = r.simplers > 0;
   const body = ok
-    ? `<h1 class="ok">✅ Zoptymalizowano</h1>
-       <div class="row"><b>Pady:</b> ${r.pads} &nbsp; <b>Simplery:</b> ${r.simplers}</div>
+    ? `<h1 class="ok">✅ Optimized</h1>
+       <div class="row"><b>Pads:</b> ${r.pads} &nbsp; <b>Simplers:</b> ${r.simplers}</div>
        <div class="row"><b>Volume → 0 dB:</b> ${r.volumeSet} &nbsp; <b>Vol&lt;Vel → 0%:</b> ${r.velSet}</div>`
-    : `<h1 class="err">⚠ Brak Simplerów</h1>
-       <div class="row">Na padach nie znaleziono urządzeń Simpler (np. Sampler/Drum Cell nie są obsługiwane przez API).</div>`;
+    : `<h1 class="err">⚠ No Simplers found</h1>
+       <div class="row">No Simpler devices on the pads (e.g. Sampler / Drum Cell aren't exposed by the SDK).</div>`;
   const dbg = r.firstParams.length
-    ? `<details><summary>Parametry pierwszego Simplera (diagnostyka)</summary><pre>${r.firstParams.join("\n").replace(/</g, "&lt;")}</pre></details>`
+    ? `<details><summary>First Simpler's parameters (debug)</summary><pre>${r.firstParams.join("\n").replace(/</g, "&lt;")}</pre></details>`
     : "";
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
     html{background:hsl(0,0%,21%);color:hsl(0,0%,75%);font-family:system-ui,sans-serif;font-size:12px;height:100%}

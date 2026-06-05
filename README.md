@@ -10,7 +10,9 @@ Right-click a Drum Rack → **Optimize Volume (0 dB · Vol<Vel 0%)** and it inst
 - all wrapped in **one undo step** (⌘Z to revert).
 
 Great for consistent gain staging across a kit before you start mixing — no more pads randomly sitting at
--12 dB or velocity ducking your hits. It also shows a quick summary of what it changed.
+-12 dB or velocity ducking your hits. It also shows a quick summary of what it changed:
+
+![Result dialog](docs/result-dialog.png)
 
 ## Requirements
 
